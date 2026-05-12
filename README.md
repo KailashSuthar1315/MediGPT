@@ -1,4 +1,4 @@
-<img width="1280" height="716" alt="chatinterface" src="https://github.com/user-attachments/assets/ea56556a-6d36-4c5a-9fc3-24fb0edc0de0" /># 🩺 MediGPT - AI Medical Assistant
+# 🩺 MediGPT - AI Medical Assistant
 
 MediGPT is a local AI-powered medical assistant built using Spring Boot and Ollama.  
 It answers only medical and health-related queries, provides health tools like BMI and Blood Pressure Checker, and streams AI responses in real-time.
@@ -50,9 +50,8 @@ It answers only medical and health-related queries, provides health tools like B
 
 ---
 
-# 6. ADD SCREENSHOT SECTION
 
-```md
+
 ## 📸 Screenshots
 
 ### Chat Interface
@@ -102,7 +101,7 @@ Before running this application, ensure you have the following installed:
 ### 1. Clone the Repository
 ```bash
 git clone <your-repository-url>
-cd olamaAi
+cd MediGPT
 ```
 
 ### 2. Build the Project
@@ -120,7 +119,7 @@ The application will start on `http://localhost:8080`
 ## ⚙️ Configuration
 
 ### AI Model Configuration
-The application is configured to use the `deepseek-r1:latest` model by default. You can change this in the `OllamaService.java` file:
+The application is configured to use the `phi3` model by default. You can change this in the `OllamaService.java` file:
 
 ```java
 request.put("model", "your-preferred-model");
@@ -129,7 +128,7 @@ request.put("model", "your-preferred-model");
 ### Available Configuration Options
 - **Ollama API URL**: `http://localhost:11434/api/generate` (default)
 - **Spring Boot Port**: `8080` (default)
-- **AI Model**: `deepseek-r1:latest` (configurable)
+- **AI Model**: `phi3` (configurable)
 
 ### CORS Configuration
 The application includes CORS configuration to allow requests from the frontend:
@@ -212,9 +211,7 @@ MediGPT provides general health-related information only.
 It is NOT a replacement for professional medical advice, diagnosis, or treatment.
 Always consult a qualified healthcare professional for medical concerns.
 
-## 📁 Project Structure
 
-```
 ## 📁 Project Structure
 
 ```bash
@@ -222,20 +219,35 @@ MediGPT/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/localai/assistant/
+│   │   │   ├── config/
+│   │   │   │   └── WebConfig.java
 │   │   │   ├── controller/
-│   │   │   ├── service/
-│   │   │   ├── repository/
+│   │   │   │   ├── ChatController.java
+│   │   │   │   └── MyController.java
 │   │   │   ├── model/
-│   │   │   └── config/
-│   │   ├── resources/
-│   │   │   ├── templates/
-│   │   │   │   ├── chat.html
-│   │   │   │   └── health-tool.html
-│   │   │   └── application.properties
+│   │   │   │   ├── ChatMessage.java
+│   │   │   │   └── ChatSession.java
+│   │   │   ├── repository/
+│   │   │   │   ├── ChatMessageRepository.java
+│   │   │   │   └── ChatSessionRepository.java
+│   │   │   ├── service/
+│   │   │   │   └── OllamaService.java
+│   │   │   └── OlamaAiApplication.java
+│   │   └── resources/
+│   │       ├── static/
+│   │       │   └── logo2.jpg
+│   │       ├── templates/
+│   │       │   ├── chat.html
+│   │       │   └── health-tool.html
+│   │       └── application.properties
 │   └── test/
+├── .gitignore
 ├── pom.xml
-└── README.md# This file
+├── mvnw
+├── mvnw.cmd
+└── README.md
 ```
+
 
 ## 🛠️ Technologies Used
 
