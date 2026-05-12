@@ -1,6 +1,7 @@
-# 🤖 Ollama AI Assistant
+<img width="1280" height="716" alt="chatinterface" src="https://github.com/user-attachments/assets/ea56556a-6d36-4c5a-9fc3-24fb0edc0de0" /># 🩺 MediGPT - AI Medical Assistant
 
-A modern, professional web-based chat interface for interacting with Ollama AI models. Built with Spring Boot and featuring a sleek, responsive frontend design.
+MediGPT is a local AI-powered medical assistant built using Spring Boot and Ollama.  
+It answers only medical and health-related queries, provides health tools like BMI and Blood Pressure Checker, and streams AI responses in real-time.
 
 ![Java](https://img.shields.io/badge/Java-17-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.4-brightgreen)
@@ -25,24 +26,43 @@ A modern, professional web-based chat interface for interacting with Ollama AI m
 
 ## ✨ Features
 
-### Backend Features
-- **RESTful API** for chat interactions
-- **Ollama Integration** with configurable AI models
-- **Spring Boot** architecture with dependency injection
-- **CORS Configuration** for cross-origin requests
-- **Error Handling** with proper HTTP status codes
-- **JSON Request/Response** format
+### 🧠 AI Medical Assistant
+- Answers only medical and healthcare questions
+- Rejects non-medical queries
+- Uses Ollama local LLM integration
+- Real-time streaming responses
+- Structured medical responses
 
-### Frontend Features
-- **Modern UI Design** with gradient backgrounds and animations
-- **Real-time Chat Interface** with message bubbles
-- **Typing Indicators** with animated dots
-- **Message Timestamps** for conversation tracking
-- **Auto-resizing Input** that grows with content
-- **Responsive Design** optimized for mobile and desktop
-- **Professional Styling** with Inter font and consistent spacing
-- **Error Handling** with user-friendly error messages
-- **Clear Chat Functionality** to reset conversations
+### 🩺 Health Tools
+- BMI Calculator
+- Blood Pressure Checker
+- Health category detection
+- Medical safety disclaimer
+
+### 💻 Technical Features
+- Spring Boot backend
+- REST API architecture
+- Real-time AI streaming
+- Responsive UI
+- Modern chat interface
+- Clean medical-themed design
+
+
+---
+
+# 6. ADD SCREENSHOT SECTION
+
+```md
+## 📸 Screenshots
+
+### Chat Interface
+<img width="1280" height="716" alt="chatinterface" src="https://github.com/user-attachments/assets/de575997-b700-4013-8bc4-a4bc01ad52ec" />
+
+
+### Health Tools
+<img width="1280" height="713" alt="healthtool" src="https://github.com/user-attachments/assets/64861616-3289-46d1-bacb-f19e7feee213" />
+
+
 
 ## 🏗️ Architecture
 
@@ -70,7 +90,7 @@ Before running this application, ensure you have the following installed:
 1. Install Ollama from [official website](https://ollama.ai/)
 2. Pull the required model:
    ```bash
-   ollama pull deepseek-r1:latest
+   ollama pull phi3
    ```
 3. Verify Ollama is running on port 11434:
    ```bash
@@ -186,27 +206,35 @@ curl -X POST http://localhost:8080/api/chat \
 - **Focus Management**: Proper focus handling
 - **Screen Reader**: Semantic HTML structure
 
+## ⚠️ Medical Disclaimer
+
+MediGPT provides general health-related information only.  
+It is NOT a replacement for professional medical advice, diagnosis, or treatment.
+Always consult a qualified healthcare professional for medical concerns.
+
 ## 📁 Project Structure
 
 ```
-olamaAi/
+## 📁 Project Structure
+
+```bash
+MediGPT/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/example/olamaAi/
-│   │   │   ├── OlamaAiApplication.java      # Main application class
-│   │   │   ├── config/
-│   │   │   │   └── WebConfig.java           # CORS and web configuration
+│   │   ├── java/com/localai/assistant/
 │   │   │   ├── controller/
-│   │   │   │   └── ChatController.java      # REST API endpoints
-│   │   │   └── service/
-│   │   │       └── OllamaService.java       # Ollama integration service
-│   │   └── resources/
-│   │       ├── templates/
-│   │       │   └── chat.html                # Frontend chat interface
-│   │       └── application.properties       # Application configuration
+│   │   │   ├── service/
+│   │   │   ├── repository/
+│   │   │   ├── model/
+│   │   │   └── config/
+│   │   ├── resources/
+│   │   │   ├── templates/
+│   │   │   │   ├── chat.html
+│   │   │   │   └── health-tool.html
+│   │   │   └── application.properties
 │   └── test/
-├── pom.xml                                  # Maven dependencies
-└── README.md                               # This file
+├── pom.xml
+└── README.md# This file
 ```
 
 ## 🛠️ Technologies Used
@@ -228,6 +256,16 @@ olamaAi/
 
 ### External Services
 - **Ollama** - AI model hosting and inference
+
+## 🚀 Future Improvements
+
+- Voice-based medical assistant
+- AI symptom checker
+- Prescription analyzer
+- Multi-language support
+- Doctor appointment integration
+- User authentication system
+- Medical report summarization
 
 ## 🤝 Contributing
 
@@ -291,6 +329,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-**Made with ❤️ using Spring Boot and Ollama**
+**Built with Spring Boot, Ollama, Java, and AI ❤️**
 
 For questions or support, please open an issue on GitHub.
